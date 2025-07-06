@@ -1,0 +1,7 @@
+﻿@model GrigorDimitrovProfile.Models.Athlete
+@{
+    ViewData["Title"] = "Подробности - Роналдо";
+}
+<h1>@Model.Name - Подробна информация</h1>
+<p><strong>Рождена дата:</strong> @Model.BirthDate.ToShortDateString()</p>
+<p>@Model.Biography</p>
