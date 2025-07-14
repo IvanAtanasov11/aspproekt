@@ -4,9 +4,9 @@
 }
 
 <!-- Lightbox2 CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 
-<!-- Хедър със снимка -->
+<!-- Хедър секция със снимка -->
 <div style="position: relative; height: 450px; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 40px;">
     <img src="https://wallpapercave.com/wp/wp2561214.jpg"
          alt="@Model.Name"
@@ -24,61 +24,67 @@
     <p style="font-size: 1.1em;"><strong>📊 Ранг:</strong> @Model.Ranking</p>
     <p style="font-size: 1.1em;"><strong>📝 Биография:</strong><br>@Model.Biography</p>
 
-    <a href="/GrigorDimitrov/Details" class="btn btn-primary mt-3" style="margin-top: 20px;">🔒 Виж подробности (само за логнати)</a>
+    <a href="/Ronaldo/Details" class="btn btn-primary mt-3" style="margin-top: 20px;">🔒 Виж подробности (само за логнати)</a>
 </div>
 
-<!-- Галерия на Григор Димитров -->
-<h2 style="text-align: center; margin: 50px 0 20px;">📸 Галерия на Григор Димитров</h2>
+<!-- Галерия със снимки на Роналдо -->
+<h2 style="text-align: center; margin: 50px 0 20px;">📸 Галерия на Кристиано Роналдо</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 60px;">
-    @foreach (var photo in Model.Photos)
-    {
-        <a href="@photo" data-lightbox="grisho-gallery" data-title="@Model.Name">
-            <img src="@photo" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px;" />
-        </a>
-    }
+    <a href="https://i.pinimg.com/originals/60/c7/76/60c7762f4b424e152d1a3e97955851a1.jpg" data-lightbox="ronaldo-gallery" data-title="Роналдо - Ювентус">
+        <img src="https://ichef.bbci.co.uk/ace/standard/624/cpsprodpb/060f/live/72ce9980-418a-11f0-b93c-5166d2dcfadc.jpg.webp" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px;">
+    </a>
+    <a href="https://i.pinimg.com/originals/21/b4/03/21b403da2b4b95ff09040c7331a8f8d9.jpg" data-lightbox="ronaldo-gallery" data-title="Роналдо - Португалия">
+        <img src="https://i.pinimg.com/originals/21/b4/03/21b403da2b4b95ff09040c7331a8f8d9.jpg" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px;">
+    </a>
+    <a href="https://i.pinimg.com/originals/cd/97/9a/cd979afc40e15fc58c221daaf5207479.jpg" data-lightbox="ronaldo-gallery" data-title="Роналдо - Реал Мадрид">
+        <img src="https://library.sportingnews.com/styles/crop_style_16_9_desktop_webp/s3/2023-02/Cristiano_Ronaldo_celebrate_Al-Nassr_Al-Wehda_2023.jpg.webp?itok=1_BoMULB" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px;">
+    </a>
+    <a href="https://i.pinimg.com/originals/ae/4d/1a/ae4d1a2824c1e87dafe6e104df367f94.jpg" data-lightbox="ronaldo-gallery" data-title="Роналдо - Манчестър Юнайтед">
+        <img src="https://hips.hearstapps.com/hmg-prod/images/cristiano-ronaldo-of-real-madrid-celebrating-his-score-the-news-photo-1738753627.pjpeg?crop=0.712xw:0.687xh;0.0463xw,0.0791xh&resize=1200:*" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px;">
+    </a>
+    <a href="https://i.pinimg.com/originals/d7/7b/9c/d77b9cc45b5b7eb902636e0a61f06bfc.jpg" data-lightbox="ronaldo-gallery" data-title="Роналдо - Ал Насър">
+        <img src="https://assets.goal.com/images/v3/blt086247a68901889e/GOAL%20-%20Blank%20WEB%20-%20Facebook%20-%202025-03-24T073412.548.png?auto=webp&format=pjpg&width=1080&quality=60" style="width: 200px; height: 150px; object-fit: cover; border-radius: 10px;">
+    </a>
 </div>
+
+<!-- Lightbox2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
 <!-- 🔢 Калкулатор -->
 <h2 style="text-align: center; margin: 50px 0 20px;">🧮 Калкулатор</h2>
 <div style="max-width: 400px; margin: auto; padding: 20px; background-color: #fff; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
-    <input type="number" id="num1" class="form-control mb-2" placeholder="Число 1" />
-    <input type="number" id="num2" class="form-control mb-3" placeholder="Число 2" />
-    <div class="btn-group mb-3" style="width: 100%;">
-        <button class="btn btn-success" onclick="calculate('+')">+</button>
-        <button class="btn btn-warning" onclick="calculate('-')">−</button>
-        <button class="btn btn-info" onclick="calculate('*')">×</button>
-        <button class="btn btn-danger" onclick="calculate('/')">÷</button>
+    <input type="number" id="num1" class="form-control mb-2" placeholder="Число 1" style="margin-bottom: 10px; padding: 8px; width: 100%; border-radius: 8px; border: 1px solid #ccc;">
+    <input type="number" id="num2" class="form-control mb-3" placeholder="Число 2" style="margin-bottom: 10px; padding: 8px; width: 100%; border-radius: 8px; border: 1px solid #ccc;">
+    <div style="margin-bottom: 15px;">
+        <button onclick="calculate('+')" style="padding: 8px 16px; margin: 5px;">+</button>
+        <button onclick="calculate('-')" style="padding: 8px 16px; margin: 5px;">−</button>
+        <button onclick="calculate('*')" style="padding: 8px 16px; margin: 5px;">×</button>
+        <button onclick="calculate('/')" style="padding: 8px 16px; margin: 5px;">÷</button>
     </div>
     <div>
         <strong>Резултат: </strong><span id="result">0</span>
     </div>
 </div>
 
-<!-- Lightbox2 JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-
 <!-- JS за Калкулатора -->
 <script>
-    function calculate(operator) {
-        const num1 = parseFloat(document.getElementById("num1").value);
-        const num2 = parseFloat(document.getElementById("num2").value);
-        let result = 0;
+    function calculate(op) {
+        const n1 = parseFloat(document.getElementById("num1").value);
+        const n2 = parseFloat(document.getElementById("num2").value);
+        let res = 0;
 
-        if (isNaN(num1) || isNaN(num2)) {
+        if (isNaN(n1) || isNaN(n2)) {
             alert("Моля въведи две числа.");
             return;
         }
 
-        switch (operator) {
-            case '+': result = num1 + num2; break;
-            case '-': result = num1 - num2; break;
-            case '*': result = num1 * num2; break;
-            case '/': result = num2 !== 0 ? num1 / num2 : 'NaN'; break;
+        switch (op) {
+            case '+': res = n1 + n2; break;
+            case '-': res = n1 - n2; break;
+            case '*': res = n1 * n2; break;
+            case '/': res = n2 !== 0 ? n1 / n2 : 'NaN'; break;
         }
 
-        document.getElementById("result").innerText = result;
+        document.getElementById("result").innerText = res;
     }
 </script>
-
-<!-- Bootstrap за input-и и бутони -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
